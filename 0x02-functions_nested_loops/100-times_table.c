@@ -1,49 +1,44 @@
 #include "main.h"
 
 /**
- * print_times_table - prints the n times table, starting with 0
- * AUTHOR = This task is done by TEMESGEN ABDISSA
- * @n: number of the times table
+ * times_table - prints the 9 times table
+ * AUTHOR =  This task is done by TEMESGEN ABDISSA
+ * Description: prints the 9 times table
+ *
+ * Return: void
  */
-void print_times_table(int n)
-{
-	int i, j, k;
 
-	if (n >= 0 && n <= 15)
+void times_table(void)
+{
+	int row, column, product, tens, ones;
+
+	for (row = 0; row <= 9; row++)
 	{
-		for (i = 0; i <= n; i++)
+		for (column = 0; column <= 9; column++)
 		{
-			for (j = 0; j <= n; j++)
+			product = row * column;
+			tens = product / 10;
+			ones = product % 10;
+
+			if (column == 0)
 			{
-				k = j * i;
-				if (j == 0)
-				{
-					_putchar(k + '0');
-				} else if (k < 10 && j != 0)
-				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar(k + '0');
-				} else if (k >= 10 && k < 100)
-				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar((k / 10) + '0');
-					_putchar((k % 10) + '0');
-				} else if (k >= 100)
-				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar((k / 100) + '0');
-					_putchar(((k / 10) % 10) + '0');
-					_putchar((k % 10) + '0');
-				}
+				_putchar('0');
 			}
-			_putchar('\n');
+			else if (product < 10)
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
+				_putchar(ones + '0');
+			}
+			else
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar(tens + '0');
+				_putchar(ones + '0');
+			}
 		}
+		_putchar('\n');
 	}
 }
-
