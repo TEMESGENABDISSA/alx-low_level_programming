@@ -1,28 +1,25 @@
 #include <stdio.h>
-#include <stdlib.h>
 /**
- * main - main blocki
+ * main - main block
  * AUTHOR = This task is done by TEMESGEN ABDISSA
- * Description: computes and prints the sum of all the multiples of 3 or
+ * Description: computes and prints even  number < 4,000,000
  * 5 below 1024 (excluded), followed by a new line
  * Return: 0
  */
 int main(void)
 {
 	int i = 0;
-	unsigned long int a = 0, b = 1, next = 0;
+	int a = 0, b = 1, next = 0;
 
-	while (i < 98)
+	while (next < 4000000)
 	{
 		next = a + b;
 		a = b;
 		b = next;
-		printf("%lu", next);
+		if (next % 2 == 0)
+			printf("%i\n", next);
 
-		if (i <= 97)
-			printf(", \n");
 		i++;
 	}
-	putchar('\n');
 	return (0);
 }
