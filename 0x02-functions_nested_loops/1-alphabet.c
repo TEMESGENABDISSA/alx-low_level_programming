@@ -1,15 +1,18 @@
 #include "main.h"
+
 /**
- * print the alphabet in lowercase
- * description: this task is done by TEMESGEN ABDISSA
- * return 0: always true
+ * print_alphabet - print alphabet
+ * descriptionn:this task is done by TEMESGENABDISSA
+ * Return: void
  */
 void print_alphabet(void)
 {
-	char  alpha;
+	char alpha  = 'a';
 
-	for (alpha = 'a'; alpha <= 'z'; alpha++)
+	while (alpha <= 'z')
+	{
 		_putchar(alpha);
-
+		alpha++;
+	}
 	_putchar('\n');
 }
