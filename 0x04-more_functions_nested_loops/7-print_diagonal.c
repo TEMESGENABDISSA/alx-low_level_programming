@@ -1,30 +1,34 @@
 #include "main.h"
 
 /**
-* print_diagonal - print diagonal line
-*
-* This task is done by Temesgen abdissa 
-*
-* Return: 0-> end of program
-*/
+ * print_diagonal - entry point
+ * task is done by temesgen abdissa
+ * Description: Prints diagonals
+ *@n: number of spaces
+ * Return: void
+ */
 
 void print_diagonal(int n)
 {
-	int i = 0, j;
+	int a, b;
 
-	while (i < n && n > 0)
+	if (n <= 0)
 	{
-		j = 0;
-		while (j < i)
-		{
-			_putchar(' ');
-			j++;
-		}
-
-		_putchar('\\');
 		_putchar('\n');
-		i++;
 	}
-	if (i == 0)
-		_putchar('\n');
+	else
+	{
+		for (a = 1; a <= n; a++)
+		{
+			if (a > 1)
+			{
+				for (b = 1; b <= a - 1; b++)
+				{
+				_putchar(' ');
+				}
+			}
+			_putchar('\\');
+			_putchar('\n');
+		}
+	}
 }
