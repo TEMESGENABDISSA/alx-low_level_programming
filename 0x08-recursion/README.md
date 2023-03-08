@@ -1,12 +1,17 @@
-             Description 
-    ALL OF THE TASK DONE IN THIS REPSITORY IS ABOUT RECURSION
+             Description
+             
+    ALL OF THE TASK DONE IN THIS REPoSITORY IS  all ABOUT RECURSION.
+    
 Recursion is the process of repeating items in a self-similar way.
 In programming languages, if a program allows you to call a function inside the same function, then it is called a recursive call of the function.
 The C programming language supports recursion, i.e., a function to call itself. But while using recursion, programmers need to be careful to define an exit condition from the function, otherwise it will go into an infinite loop.
-Recursive functions are very useful to solve many mathematical problems
-          QUESTION OF THE TASK 
-  _putchar.c: C function that writes a character to stdout.
-  main.h: Header file containing prototypes for all functions written in the project.
+Recursive functions are very useful to solve many mathematical problems.
+          
+N.B   _putchar.c: C function that writes a character to stdout.
+N.B   main.h: Header file containing prototypes for all functions written in the project.
+      
+      QUESTION OF THETASKS 
+      
 0. She locked away a secret, deep inside herself, something she once knew to be true... but chose to forget
     0-puts_recursion.c: C function that prints a string, followed by a new line.
 
