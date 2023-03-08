@@ -3,7 +3,7 @@
 /**
  * factorial - Returns the factorial of a given number.
  * @n: The number to find the factorial of.
- * this task is done temesgen abdissa
+ * this task is done by temesgen abdissa
  * Return: If n > 0 - the factorial of n.
  * If n < 0 - 1 to indicate an error.
  */
@@ -19,6 +19,7 @@ int factorial(int n)
 
 	result *= factorial(n - 1);
 
-  return (result);
+	return (result);
 }
+
 
