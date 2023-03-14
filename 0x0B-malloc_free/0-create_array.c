@@ -6,20 +6,26 @@
  *                initializes it with a specific char.
  * @size: The size of the array to be initialized.
  * @c: The specific char to intialize the array with.
- * this task is done by temesgen abdissa
+ * This task is done by temesgen abdisssa
  * Return: If size == 0 or the function fails - NULL.
  *         Otherwise - a pointer to the array.
  */
-char *create_array(unsigned int size, char c) 
+char *create_array(unsigned int size, char c)
 {
-    if (size == 0) {
-        return NULL;
-    }
-    char *array = malloc(size * sizeof(char));
-    if (array != NULL) {
-        for (unsigned int i = 0; i < size; i++) {
-            array[i] = c;
-        }
-    }
-    return array;
+	char *array;
+	unsigned int index;
+
+	if (size == 0)
+		return (NULL);
+
+	array = malloc(sizeof(char) * size);
+
+	if (array == NULL)
+		return (NULL);
+
+	for (index = 0; index < size; index++)
+		array[index] = c;
+
+	return (array);
 }
+
