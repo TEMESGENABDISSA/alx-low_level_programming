@@ -1,20 +1,18 @@
 #include "main.h"
-#include <stdlib.h>
 
 /**
- * malloc_checked - Allocates memory using malloc.
- * @b: The number of bytes to be allocated.
- * this task is done by temesgen abdissa
- * Return: A pointer to the allocated memory.
+ * malloc_checked - allocates memory using malloc
+ * @b: bytes allocate
+ * This task is done by Temesgen abdissa
+ * Return: pointer
  */
 void *malloc_checked(unsigned int b)
 {
-	int *mem;
+	void *ptr;
 
-	mem = malloc(b);
-
-	if (mem == NULL)
+	ptr = malloc(b);
+	if (ptr == NULL)
 		exit(98);
-
-	return (mem);
+	return (ptr);
 }
+
