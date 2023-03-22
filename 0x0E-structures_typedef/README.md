@@ -1,7 +1,6 @@
       DESCRIPTION ABOUT C - Structures, typedef
-C
 
-n C programming language, structures allow the creation of user-defined data types that can hold different data types, such as integers, floats, characters, and even other structures. Structures are defined using the struct keyword, which is followed by the structure's name and a block of declarations for its members.
+in C programming language, structures allow the creation of user-defined data types that can hold different data types, such as integers, floats, characters, and even other structures. Structures are defined using the struct keyword, which is followed by the structure's name and a block of declarations for its members.
 
  Task depend on c-structure.typedef
 
