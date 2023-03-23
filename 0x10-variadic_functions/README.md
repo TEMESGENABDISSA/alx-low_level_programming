@@ -7,7 +7,7 @@ The most commonly used variadic function in C is printf(), which takes a variabl
 
 To define a variadic function, you use the va_list type, along with the va_start(), va_arg(), and va_end() macros. The va_list type is used to declare a variable that will hold the arguments passed to the function, and the va_start() macro initializes the va_list variable. The va_arg() macro is used to retrieve the next argument from the va_list, and the va_end() macro cleans up the va_list when the function is finished.
  
-             Tasks deend on the c- variadic functions
+            Given  Tasks depend on the c- variadic functions
 
 0. Beauty is variable, ugliness is constant
     0-sum_them_all.c: C function that returns the sum of all its paramters.
