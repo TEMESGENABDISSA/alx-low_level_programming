@@ -33,5 +33,4 @@ To define a variadic function, you use the va_list type, along with the va_start
         Any other character is ignored.
         A new line is printed at the end of the function.
 
-4. Real programmers can write assembly code in any language
-    100-hello_holberton.asm: 64-bit assembly program that prints Hello, Holberton, followed by a new line using only the system call write with int. 
+ 
