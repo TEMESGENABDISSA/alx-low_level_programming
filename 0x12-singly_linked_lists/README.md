@@ -1,5 +1,8 @@
       DESCRIPTION  ABOUT 0x12. C - Singly linked lists
-      A linked list is a linear grouping of data pieces whose physical arrangement in memory does not determine their order. Instead, every part relates to the one before it. It is a data structure made up of a number of nodes that collectively stand for a sequence. Each node includes data and a reference (also known as a link) to the following node in the sequence in its most basic form.
+      A linked list is a linear grouping of data pieces whose physical arrangement in memory does not determine their order. 
+      Instead, every part relates to the one before it. 
+      It is a data structure made up of a number of nodes that collectively stand for a sequence. 
+      Each node includes data and a reference (also known as a link) to the following node in the sequence in its most basic form.
 
  GIVEN TASKS DEPEND ON  C - Singly linked lists
 
