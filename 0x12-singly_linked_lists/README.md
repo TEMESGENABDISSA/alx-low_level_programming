@@ -33,6 +33,6 @@
   101-hello_holberton.asm:64-but assembly program that prints Hello, Holberton followed by a new line using only the printf function witout interrupts.
   
   Author: Temesgen Abdissa
-  Date: Thursday 29th July 2023
+  Date: Thursday 29th March 2023
   
    
