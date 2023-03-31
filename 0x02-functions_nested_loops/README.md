@@ -1,7 +1,9 @@
 
    AUTHOR : Temesgen Abdissa
-   Date : FEBRUARY 22, 2023
-  DEscription about functions_nested_loops
+   
+   Date : FEBRUARY 22/2023
+   
+  Description about functions_nested_loops
   
 n C programming language, a nested loop is a loop inside another loop. 
 The functions_nested_loops program in C is a program that contains nested loops and uses functions to perform some specific task.
