@@ -1,3 +1,7 @@
+   AUTHOR : TEMESGEN ABDISSA
+   
+   DATE : MARCH 23 / 2023
+   
    DESCRIPTION ABOUT C - Variadic functions
 
 A variadic function is a function that accepts a variable number of arguments. In C, we use the <stdarg.h> header to define and manipulate such functions.
