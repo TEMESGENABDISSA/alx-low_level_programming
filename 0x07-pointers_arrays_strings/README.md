@@ -1,4 +1,9 @@
 
+AUTHOR : TEMESGEN ABDISSA
+
+DATE : MARCH 6 /2023 
+
+
                DESCRIPTION  : C - Even more pointers, arrays and strings
 
 In this project, I know more about what and how to use pointers to pointers and multidimensional arrays in C.
