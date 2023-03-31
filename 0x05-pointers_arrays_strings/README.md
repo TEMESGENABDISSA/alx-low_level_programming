@@ -1,3 +1,8 @@
+
+AUTHOR : TEMESGEN ABDISSA
+DATE : FEBRUARY 28/2023
+
+
 short description about pointer,array, and string in c programming languages.
 
 All the task in this directories tell us how we write a progra using pointer,array ,string and how to solve problems.
