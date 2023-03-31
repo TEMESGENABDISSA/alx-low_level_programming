@@ -1,5 +1,9 @@
 
-DESCRIPTION ABOUT DEBUGGING
+  AUTHOR : TEMESGEN ABDISSA
+  
+  DATE : FEBRUARY 21/2023
+     
+      DESCRIPTION ABOUT DEBUGGING
 
 The process of finding and fixing issues is called debugging. Heart of debugging lies in understanding the bugs and deciding on the tools for debugging. Print statements or Logging in the code can be added to inspect the values of variables.
 
