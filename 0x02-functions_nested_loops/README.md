@@ -1,12 +1,14 @@
 
-
-
-
-A function is a group of statements that are designed to perform a certain task.
+   AUTHOR : Temesgen Abdissa
+   Date : FEBRUARY 22, 2023
+  DEscription about functions_nested_loops
+  
+n C programming language, a nested loop is a loop inside another loop. 
+The functions_nested_loops program in C is a program that contains nested loops and uses functions to perform some specific task.
 Most of the time functions are used to divide up our code into simpler parts that make the code easier to read and debug. and 
 Nested loop is a way of adding a loop inside a loop 
 
-TASK QUESTIONS
+TASK QUESTIONS DEPEND ON functions_nested_loops
 
 task 0.0_putchar Write a program that prints _putchar, followed by a new line.
 
