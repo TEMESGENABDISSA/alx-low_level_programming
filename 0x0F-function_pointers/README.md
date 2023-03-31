@@ -1,3 +1,7 @@
+    AUTHOR : TEMESGEN ABDISSA
+    
+    DATE : MARCH  22 / 2023
+   
    description  about C - Function pointers.
 
 In C, a function pointer is a variable that stores the memory address of a function. 
