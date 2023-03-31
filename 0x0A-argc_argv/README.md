@@ -1,10 +1,13 @@
-      description
+      AUTHOR : TEMESGEN ABDISSA
+      
+      DATE : MARCH 10 / 2023
+      
 
   all this tasks are about C - argc, argv
 
 In this project, I learned about utilizing arguments passed to C functions with argc and argv as well as how to use attribute((unused)) or void to compile functions with unused variables or parameters.
 
-               GEVEN QUESTIONS /TASKS 
+               GIVEN TASKS 
 
 0. It ain't what they call you, it's what you answer to
     0-whatsmyname.c: C program that prints its name, followed by a new line.
