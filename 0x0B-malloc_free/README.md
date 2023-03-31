@@ -1,4 +1,9 @@
-          DESCRIBTION  ABOUT  THE  COURSE 
+          AUTHOR : TEMESGEN ABDISSA
+          
+          DATE : MARCH 13 / 2023
+          
+          DESCRIBTION  ABOUT   MALLOC_FREE
+          
 In C programming language, malloc() and free() are functions used for dynamic memory allocation and deallocation.
 The malloc() function is used to dynamically allocate memory in the heap. It takes an argument representing the size of the memory block to be allocated in bytes and returns a pointer to the first byte of the allocated memory block.
 The free() function is used to deallocate memory that was previously allocated using malloc(). It takes a pointer to the memory block that needs to be deallocated and frees up that memory block to be used by the system for other purposes.
