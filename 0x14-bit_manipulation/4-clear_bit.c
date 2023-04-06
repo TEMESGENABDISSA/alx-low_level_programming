@@ -1,27 +1,33 @@
-#include "main.h"
+#ifndef MAIN_H
+#define MAIN_H
+
+/* Libraries */
+#include <stdio.h>
+#include <stdlib.h>
+
+/* Function prototypes */
+int clear_bit(unsigned long int *n, unsigned int index);
+
+#endif /* MAIN_H */
 
 /**
- * clear_bit - Clears a bit at a given index in a given unsigned long int
- * @n: A pointer to the unsigned long int
- * @index: The index of the bit to clear
+ * clear_bit - Sets the value of a bit at a given index to 0.
+ * @n: A pointer to the bit.
+ * @index: The index to set the value at - indices start at 0.
  *
- * Return: 1 on success, -1 if index is out of range
+ * Return: If an error occurs - -1.
+ *         Otherwise - 1.
  */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-    if (index >= sizeof(unsigned long int) * 8)
-    {
-        /* index out of range */
-        return (-1);
-    }
+	/* Check if index is valid */
+	if (index >= (sizeof(unsigned long int) * 8))
+		return (-1);
 
-    /* create a mask with a bit set to 0 at the index position and all other bits set to 1 */
-    unsigned long int mask = ~(1UL << index);
+	/* Clear the bit at the given index */
+	*n &= ~(1 << index);
 
-    /* use the & operator to clear the bit at the index position in n */
-    *n &= mask;
-
-    /* return 1 to indicate success */
-    return (1);
+	return (1);
 }
+
 
