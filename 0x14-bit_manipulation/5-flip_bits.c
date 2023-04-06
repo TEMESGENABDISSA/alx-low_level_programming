@@ -14,7 +14,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
     unsigned long int xor_result = n ^ m;
     unsigned int count = 0;
 
-    // Count the number of set bits in xor_result
+    
     while (xor_result) {
         count++;
         xor_result &= xor_result - 1;
@@ -22,4 +22,3 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 
     return count;
 }
-
