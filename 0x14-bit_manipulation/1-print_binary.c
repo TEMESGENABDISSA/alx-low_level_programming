@@ -6,12 +6,22 @@
  */
 void print_binary(unsigned long int n)
 {
-    for (int i = sizeof(n) * 8 - 1; i >= 0; i--) {
-        if ((n >> i) & 1) {
-            _putchar('1');
-        } else {
-            _putchar('0');
-        }
+    if (n == 0) {
+        _putchar('0');
+        return;
+    }
+
+    int binary_digits[sizeof(n) * 8];
+    int i = 0;
+
+    while (n > 0) {
+        binary_digits[i++] = n % 2;
+        n = n / 2;
+    }
+
+    for (int j = i - 1; j >= 0; j--) {
+        _putchar(binary_digits[j] + '0');
     }
 }
+
 
