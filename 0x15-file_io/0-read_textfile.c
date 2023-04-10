@@ -1,43 +1,39 @@
 #include "main.h"
-#include <stdio.h>
-#include <fcntl.h> /* for open() */
-#include <unistd.h> /* for read(), write(), close() */
-#include <stdlib.h> /* for malloc(), free() */
+#include <stdlib.h>
 
 /**
- * read_textfile - reads and prints text file content to STDOUT
- * @filename: name of file
- * @letters: number of letters to read and print
- * Return: number of letters it read and wrote, 0 if it fails
+ * read_textfile - Reads a text file and prints it to POSIX stdout.
+ * @filename: A pointer to the name of the file.
+ * @letters: The number of letters the
+ *           function should read and print.
+ *
+ * Return: If the function fails or filename is NULL - 0.
+ *         O/w - the actual number of bytes the function can read and print.
  */
-
 ssize_t read_textfile(const char *filename, size_t letters)
 {
+	ssize_t o, r, w;
 	char *buffer;
-	int filedesc;
-	ssize_t wbt, rbt;
 
 	if (filename == NULL)
 		return (0);
 
-	/* open file in read only mode */
-	filedesc = open(filename, O_RDONLY);
-
-	if (filedesc == -1)
-		return (0);
-
 	buffer = malloc(sizeof(char) * letters);
-
 	if (buffer == NULL)
 		return (0);
 
-	/*read file and store number of read bytes*/
-	rbt = read(filedesc, buffer, letters);
-	/*write the letters to STDOUT instead of file*/
-	wbt = write(STDOUT_FILENO, buffer, rbt);
+	o = open(filename, O_RDONLY);
+	r = read(o, buffer, letters);
+	w = write(STDOUT_FILENO, buffer, r);
+
+	if (o == -1 || r == -1 || w == -1 || w != r)
+	{
+		free(buffer);
+		return (0);
+	}
+
 	free(buffer);
-	close(filedesc);
-	return (wbt);
+	close(o);
+
+	return (w);
 }
-
-
