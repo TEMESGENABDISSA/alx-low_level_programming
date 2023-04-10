@@ -1,54 +1,38 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
+#include "main.h"
 
 /**
- * read_textfile - Reads a text file and prints it to the standard output
- * @filename: The name of the file to read
- * @letters: The number of letters to read and print
+ * create_file - creates a file with the given name and writes the
+ *               given text to it
+ * @filename: the name of the file to create
+ * @text_content: the text to write to the file
  *
- * Return: The actual number of letters read and printed, or 0 on failure
+ * Return: 1 on success, -1 on failure
  */
-ssize_t read_textfile(const char *filename, size_t letters)
+int create_file(const char *filename, char *text_content)
 {
-	int fd;
-	ssize_t n_read, n_written;
-	char *buffer;
+    int fd, res, len = 0;
 
-	if (filename == NULL)
-		return (0);
+    if (filename == NULL)
+        return (-1);
 
-	fd = open(filename, O_RDONLY);
-	if (fd == -1)
-		return (0);
+    fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600);
+    if (fd == -1)
+        return (-1);
 
-	buffer = malloc(sizeof(char) * letters);
-	if (buffer == NULL)
-	{
-		close(fd);
-		return (0);
-	}
+    if (text_content != NULL)
+    {
+        while (text_content[len])
+            len++;
 
-	n_read = read(fd, buffer, letters);
-	if (n_read == -1)
-	{
-		free(buffer);
-		close(fd);
-		return (0);
-	}
+        res = write(fd, text_content, len);
+        if (res == -1)
+        {
+            close(fd);
+            return (-1);
+        }
+    }
 
-	n_written = write(STDOUT_FILENO, buffer, n_read);
-	if (n_written == -1 || (size_t)n_written != n_read)
-	{
-		free(buffer);
-		close(fd);
-		return (0);
-	}
-
-	free(buffer);
-	close(fd);
-
-	return (n_written);
+    close(fd);
+    return (1);
 }
 
