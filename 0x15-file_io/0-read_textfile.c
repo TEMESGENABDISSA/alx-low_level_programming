@@ -1,53 +1,43 @@
-#include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
 #include "main.h"
+#include <stdio.h>
+#include <fcntl.h> /* for open() */
+#include <unistd.h> /* for read(), write(), close() */
+#include <stdlib.h> /* for malloc(), free() */
 
 /**
- * read_textfile - Reads a text file and prints it to the POSIX standard output
- * @filename: Name of the file to read
- * @letters: Number of letters to read and print
- *
- * Return: The actual number of letters read and printed, or 0 if an error occurred
+ * read_textfile - reads and prints text file content to STDOUT
+ * @filename: name of file
+ * @letters: number of letters to read and print
+ * Return: number of letters it read and wrote, 0 if it fails
  */
+
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-    int fd;
-    ssize_t n_read, n_written;
-    char *buf;
+	char *buffer;
+	int filedesc;
+	ssize_t wbt, rbt;
 
-    if (filename == NULL)
-        return (0);
+	if (filename == NULL)
+		return (0);
 
-    fd = open(filename, O_RDONLY);
-    if (fd == -1)
-        return (0);
+	/* open file in read only mode */
+	filedesc = open(filename, O_RDONLY);
 
-    buf = malloc(sizeof(char) * (letters + 1));
-    if (buf == NULL)
-    {
-        close(fd);
-        return (0);
-    }
+	if (filedesc == -1)
+		return (0);
 
-    n_read = read(fd, buf, letters);
-    if (n_read == -1)
-    {
-        free(buf);
-        close(fd);
-        return (0);
-    }
+	buffer = malloc(sizeof(char) * letters);
 
-    n_written = write(STDOUT_FILENO, buf, n_read);
-    if (n_written == -1 || n_written != n_read)
-    {
-        free(buf);
-        close(fd);
-        return (0);
-    }
+	if (buffer == NULL)
+		return (0);
 
-    free(buf);
-    close(fd);
-    return (n_written);
+	/*read file and store number of read bytes*/
+	rbt = read(filedesc, buffer, letters);
+	/*write the letters to STDOUT instead of file*/
+	wbt = write(STDOUT_FILENO, buffer, rbt);
+	free(buffer);
+	close(filedesc);
+	return (wbt);
 }
+
 
