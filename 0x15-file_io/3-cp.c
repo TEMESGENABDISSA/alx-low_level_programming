@@ -1,61 +1,73 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
-
-#define BUFFER_SIZE 1024
+#include "main.h"
 
 /**
- * error_exit - prints an error message and exits with the given code
- * @code: the exit code
- * @msg: the error message to print
+ * ReadERR - error if reading from file fails
+ * @argv: array of passed args
+ * Return: void
  */
-void error_exit(int code, char *msg)
+void ReadERR(char *argv[])
 {
-        dprintf(STDERR_FILENO, "%s\n", msg);
-        exit(code);
+	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+	exit(98);
 }
 
 /**
- * main - entry point
- * @argc: the number of arguments
- * @argv: the argument vector
- *
- * Return: Always 0 (success)
+ * WriteERR - error if writing into file fails
+ * @argv: passed args
+ * Return: void
  */
-int main(int argc, char **argv)
+void WriteERR(char *argv[])
 {
-        int fd_from, fd_to, rcount, wcount;
-        char buffer[BUFFER_SIZE];
-
-        if (argc != 3)
-                error_exit(97, "Usage: cp file_from file_to");
-
-        fd_from = open(argv[1], O_RDONLY);
-        if (fd_from < 0)
-                error_exit(98, "Error: Can't read from file");
-
-        fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-        if (fd_to < 0)
-                error_exit(99, "Error: Can't write to file");
-
-        do {
-                rcount = read(fd_from, buffer, BUFFER_SIZE);
-                if (rcount < 0)
-                        error_exit(98, "Error: Can't read from file");
-
-                wcount = write(fd_to, buffer, rcount);
-                if (wcount < 0)
-                        error_exit(99, "Error: Can't write to file");
-
-        } while (rcount > 0);
-
-        if (close(fd_from) < 0)
-                error_exit(100, "Error: Can't close fd");
-
-        if (close(fd_to) < 0)
-                error_exit(100, "Error: Can't close fd");
-
-        return (0);
+	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+	exit(99);
 }
 
+/**
+ * main - program that copies content of file into another
+ * @argc: number of passed args
+ * @argv: array of passed args
+ * Return: 0
+ */
+
+int main(int argc, char *argv[])
+{
+	int file_from, file_to, closeERR;
+	ssize_t nbrfr = 1024, nbwrto;
+	char buffer[1024];
+
+	if (argc != 3)
+	{
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
+	}
+	file_from = open(argv[1], O_RDONLY);
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
+
+	if (file_form == -1)
+		ReadERR(argv);
+	if (file_to == -1)
+		WriteERR(argv);
+	while (nbrfr == 1024)
+	{
+		nbrfr = read(file_from, buffer, 1024);
+		if (nbrfr == -1)
+			ReadERR(argv);
+		nbwrto = write(file_to, buffer, nbrfr);
+		if (nbwrto == -1)
+			WriteERR(argv);
+	}
+	closeERR = close(file_from);
+	if (closeERR == -1)
+	{
+		dprintf(STDERR_FILENO, "Error, Can't close fd %d\n", file_from);
+		exit(100);
+	}
+	closeERR = close(file_to);
+	if (closeERR == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
+		exit(100);
+	}
+	return (0);
+}
