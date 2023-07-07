@@ -2,10 +2,10 @@
 
 /**
  * hash_table_create - Create  hash-table.
- * @size:  size of array.
- * done by Temesgen Abdissa
- * Return: If an error happen - NULL.
- *         else - a pointer to the new hash-table.
+ * @size:  size of the array.
+ *
+ * Return: If an error occurs - NULL.
+ *         else - a pointer to  new hash-table.
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
